@@ -55,6 +55,24 @@ build CMakeFiles/ThreadPools.dir/main.cpp.obj: CXX_COMPILER__ThreadPools_Debug D
   OBJECT_DIR = CMakeFiles\ThreadPools.dir
   OBJECT_FILE_DIR = CMakeFiles\ThreadPools.dir
 
+build CMakeFiles/ThreadPools.dir/cancel.cpp.obj: CXX_COMPILER__ThreadPools_Debug D$:/Jobs/Project/ThreadPools/cancel.cpp || cmake_object_order_depends_target_ThreadPools
+  DEP_FILE = CMakeFiles\ThreadPools.dir\cancel.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  OBJECT_DIR = CMakeFiles\ThreadPools.dir
+  OBJECT_FILE_DIR = CMakeFiles\ThreadPools.dir
+
+build CMakeFiles/ThreadPools.dir/thread_pool.cpp.obj: CXX_COMPILER__ThreadPools_Debug D$:/Jobs/Project/ThreadPools/thread_pool.cpp || cmake_object_order_depends_target_ThreadPools
+  DEP_FILE = CMakeFiles\ThreadPools.dir\thread_pool.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  OBJECT_DIR = CMakeFiles\ThreadPools.dir
+  OBJECT_FILE_DIR = CMakeFiles\ThreadPools.dir
+
+build CMakeFiles/ThreadPools.dir/io_util.cpp.obj: CXX_COMPILER__ThreadPools_Debug D$:/Jobs/Project/ThreadPools/io_util.cpp || cmake_object_order_depends_target_ThreadPools
+  DEP_FILE = CMakeFiles\ThreadPools.dir\io_util.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  OBJECT_DIR = CMakeFiles\ThreadPools.dir
+  OBJECT_FILE_DIR = CMakeFiles\ThreadPools.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ThreadPools
@@ -63,7 +81,7 @@ build CMakeFiles/ThreadPools.dir/main.cpp.obj: CXX_COMPILER__ThreadPools_Debug D
 #############################################
 # Link the executable ThreadPools.exe
 
-build ThreadPools.exe: CXX_EXECUTABLE_LINKER__ThreadPools_Debug CMakeFiles/ThreadPools.dir/main.cpp.obj
+build ThreadPools.exe: CXX_EXECUTABLE_LINKER__ThreadPools_Debug CMakeFiles/ThreadPools.dir/main.cpp.obj CMakeFiles/ThreadPools.dir/cancel.cpp.obj CMakeFiles/ThreadPools.dir/thread_pool.cpp.obj CMakeFiles/ThreadPools.dir/io_util.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ThreadPools.dir

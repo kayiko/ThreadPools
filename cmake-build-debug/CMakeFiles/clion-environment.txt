@@ -1,4 +1,4 @@
-ToolSet: w64 6.0 (local)@D:\VsCode\WinMing\mingw64_GCC8.1\mingw64
+ToolSet: w64 6.0 (local)@D:\Jobs\Project\mingw64
 Options: 
 
 Options:-DCMAKE_MAKE_PROGRAM=D:/APP/Clion/CLion 2022.2.4/bin/ninja/win/ninja.exe
