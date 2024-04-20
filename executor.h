@@ -63,8 +63,7 @@ namespace arrow{
 
         template <typename Function, typename... Args,
                 typename ReturnType = typename std::result_of<Function(Args...)>::type>
-        std::future<ReturnType> Submit(TaskHints hints, StopToken stop_token,
-                                       StopCallback stop_callback, Function&& func,
+        std::future<ReturnType> Submit(TaskHints hints, StopToken stop_token,StopCallback stop_callback, Function&& func,
                                        Args&&... args) {
             std::promise<ReturnType> promise;
             std::future<ReturnType> future = promise.get_future();

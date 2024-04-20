@@ -17,9 +17,11 @@ int setenv(const char *name, const char *value, int overwrite)
 
 std::optional<std::string> GetEnvVar(const char* name) {
     char* c_str = getenv(name);
+
     if (c_str == nullptr) {
         return {};
     }
+    //std::cout<<*c_str<<std::endl;
     return std::string(c_str);
 }
 

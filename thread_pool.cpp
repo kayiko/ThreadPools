@@ -220,7 +220,7 @@ namespace arrow{
         std::shared_ptr<State> state = sp_state_;
 
         for(int i=0;i<threads;i++){
-            state_->workers_.emplace_back();
+            state_->workers_.emplace_back();//产生一个新的线程加入到双向链表队列
             auto it = --(state_->workers_.end());
             *it = std::thread([this, state, it] {
                 current_thread_pool_ = this;
@@ -240,7 +240,7 @@ namespace arrow{
             CollectFinishedWorkersUnlocked();
             state_->tasks_queued_or_running_++;
             if (static_cast<int>(state_->workers_.size()) < state_->tasks_queued_or_running_ &&
-                state_->desired_capacity_ > static_cast<int>(state_->workers_.size())) {
+                state_->desired_capacity_ > static_cast<int>(state_->workers_.size())) {//当前任务数大于线程数且没有到达期望线程数量上限
                 // We can still spin up more workers so spin up a new worker
                 LaunchWorkersUnlocked(/*threads=*/1);
             }
@@ -284,13 +284,16 @@ namespace arrow{
     int ThreadPool::DefaultCapacity() {
         int capacity, limit;
         capacity = ParseOMPEnvVar("OMP_NUM_THREADS");
+
         if (capacity == 0) {
             capacity = std::thread::hardware_concurrency();
         }
+        std::cout<<"DefaultCapcity: "<<capacity<<std::endl;
         limit = ParseOMPEnvVar("OMP_THREAD_LIMIT");
         if (limit > 0) {
             capacity = std::min(limit, capacity);
         }
+        std::cout<<"DefaultCapcity: "<<capacity<<std::endl;
         if (capacity == 0) {
             std::cout << "Failed to determine the number of available threads, "
                          "using a hardcoded arbitrary value";
